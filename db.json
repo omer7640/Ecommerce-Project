@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Fusion 2.0 Side Table",
+      "imgUrl": "https://interwood.pk/cdn/shop/files/FusionSideTable-1_596x_crop_center.jpg?v=1714801926",
+      "price": 350
+    },
+    {
+      "id": "3",
+      "title": "Alexa Sofa Chair",
+      "imgUrl": "https://interwood.pk/cdn/shop/files/ALEXA-01_19396e11-bcb9-48b4-9529-7344b8efb582_596x_crop_center.jpg?v=1721719783",
+      "price": 88
+    },
+    {
+      "id": "4",
+      "title": "Media Unit",
+      "imgUrl": "https://interwood.pk/cdn/shop/files/FusionMediaUnit_596x_crop_center.jpg?v=1714734678",
+      "price": 300
+    },
+    {
+      "id": "5",
+      "title": "Noble Sofa",
+      "imgUrl": "https://interwood.pk/cdn/shop/products/sofa-noble-3-seater-in-navy-blue-velvet-8e76b9c-interwood-mobel_1_3_596x_crop_center.png?v=1687428873",
+      "price": 280
+    },
+    {
+      "id": "6",
+      "title": "Visitor chair",
+      "imgUrl": "https://interwood.pk/cdn/shop/products/fg050001840_596x_crop_center.jpg?v=1699177400",
+      "price": 150
+    },
+    {
+      "id": "735f",
+      "title": "hello world",
+      "price": "1300",
+      "imgUrl": "blob:http://localhost:3000/e98d0dff-10ab-4cf1-8c6c-a69c71ad0e9d"
+    }
+  ]
+}

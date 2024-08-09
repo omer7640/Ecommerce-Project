@@ -1,0 +1,36 @@
+.featured-section {
+  background-color: #f6f6f6;
+  height: 400px;
+}
+
+.feature-heading {
+  display: flex;
+  font-size: 36px;
+  color: #444444;
+  align-items: center;
+  justify-content: center;
+}
+.feature-heading > span {
+  border-bottom: 2px solid #c8a165;
+  padding-bottom: 12px;
+}
+.feature-card {
+  display: flex;
+  width: 86%;
+  margin: auto;
+
+  gap: 20px;
+  margin-top: 50px;
+  padding-left: 34px;
+}
+.card {
+  height: 405px;
+  cursor: pointer;
+}
+.card-img-top {
+  width: 244px;
+  height: 244px;
+  margin: auto;
+  margin: 0 10px;
+  margin-top: 10px;
+}
