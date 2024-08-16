@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
-import { CounterContext } from "../../Context/Context";
+import "./Shop.css";
+import { ProductContext } from "../../Context/ProductContext";
+import { DeleteOutline, Edit } from "@mui/icons-material";
+import Crud from "./Crud";
 // import { CounterContext } from "../../Context/Context";
 
 export default function AdminCard({ item }) {
-  const value = useContext(CounterContext);
+  const value = useContext(ProductContext);
   console.log(item);
   return (
     <div>
@@ -43,16 +46,20 @@ export default function AdminCard({ item }) {
             <button
               onClick={() => value.deletPro(item.id)}
               type="button"
-              class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              // class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              className="delete-icon"
             >
-              Delete
+              <DeleteOutline className="admin-icon" />
             </button>
 
             <button
-              type="button"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              type="submit"
+              onClick={() => value.handleEditProduct(item)}
+              // class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              className="edit-icon"
             >
-              Edit
+              {/* <Edit className="admin-icon" /> */}
+              <Crud edit={true} />
             </button>
           </div>
           {/* <svg

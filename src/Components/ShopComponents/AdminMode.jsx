@@ -1,12 +1,13 @@
 import { Modal } from "flowbite";
 import React, { useContext, useState } from "react";
 import AdminCard from "./AdminCard";
-import { CounterContext } from "../../Context/Context";
+import { ProductContext } from "../../Context/ProductContext";
 import Crud from "../ShopComponents/Crud";
 
 export default function AdminMode() {
   const [modal, setModal] = useState(false);
-  const value = useContext(CounterContext);
+  // const value = useContext(CounterContext);
+  const value = useContext(ProductContext);
 
   const toggleModal = () => {
     setModal(!modal);
@@ -18,7 +19,7 @@ export default function AdminMode() {
         onClick={toggleModal}
         data-modal-target="select-modal"
         data-modal-toggle="select-modal"
-        class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="block text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 admin-mode"
         type="button"
       >
         Admin Mode
@@ -72,7 +73,7 @@ export default function AdminMode() {
                 <Crud />
                 <ul class="space-y-4 mb-4">
                   {value.data.map((item) => (
-                    <AdminCard item={item} />
+                    <AdminCard item={item} key={item.id} />
                   ))}
                 </ul>
                 <button class="text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

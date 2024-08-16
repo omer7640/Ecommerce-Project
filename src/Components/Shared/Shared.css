@@ -1,0 +1,77 @@
+.foo {
+  background: #eee none repeat scroll 0 0;
+  margin-top: 100px;
+  padding-top: 100px;
+}
+.footer-title {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: #434343;
+}
+
+.listss {
+  list-style: circle;
+  text-decoration: none;
+  color: #666;
+  margin-left: -20px;
+}
+.listss:hover {
+  color: #c8a165;
+  text-decoration: none;
+}
+.brand-imgs {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.brand-section {
+  background-color: white;
+  margin-bottom: -50px;
+  position: relative;
+  top: 84px;
+}
+.hurst {
+  width: 103px;
+  height: auto;
+}
+.shopping {
+  background-color: #c8a165;
+}
+
+.shopping:hover {
+  background-color: #ad8b59;
+}
+.hurst-head {
+  text-decoration: none;
+  color: black;
+}
+.nav-link:hover {
+  color: #ad8b59;
+}
+@media screen and (max-width: 700px) {
+  .brand-section {
+    width: 70%;
+    margin: auto;
+  }
+  .brand-imgs {
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .brand-section {
+    width: 50%;
+    margin: auto;
+  }
+  .brand-imgs {
+    width: 50%;
+    margin: auto;
+    overflow: hidden;
+  }
+}

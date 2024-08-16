@@ -1,25 +1,51 @@
-import React, { useContext, useState } from "react";
-import { CounterContext } from "../../Context/Context";
+import React, { useContext, useState, useEffect } from "react";
+import { ProductContext } from "../../Context/ProductContext";
+import { Edit } from "@mui/icons-material";
 
-export default function Crud() {
+export default function Crud({ edit }) {
   const [modal, setModal] = useState(false);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const [rating, setRating] = useState("");
+  const [desc, setDesc] = useState("");
 
-  const value = useContext(CounterContext);
+  const value = useContext(ProductContext);
+  // console.log(value.currentProduct);
+  useEffect(() => {
+    if (value.currentProduct && edit) {
+      setTitle(value.currentProduct.title);
+      setPrice(value.currentProduct.price);
+      setImgUrl(value.currentProduct.imgUrl);
+      setRating(value.currentProduct.rating);
+      setDesc(value.currentProduct.desc);
+    }
+  }, [value.currentProduct]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const product = { title, price, imgUrl };
-    value.addProduct(product);
+    const product = {
+      title,
+      price,
+      imgUrl,
+      rating,
+      desc,
+      id: value.currentProduct?.id,
+    };
+    if (value.currentProduct && edit) {
+      value.editProduct(product);
+    } else {
+      value.addProduct(product);
+    }
     setTitle("");
     setPrice("");
     setImgUrl("");
+    setRating("");
+    setDesc("");
     setModal(!modal);
   };
   const handleImage = (e) => {
-    console.log(e.target.files[0]);
+    // console.log(e.target.files[0]);
     setImgUrl(URL.createObjectURL(e.target.files[0]));
   };
   return (
@@ -29,10 +55,15 @@ export default function Crud() {
         onClick={(e) => setModal(!modal)}
         data-modal-target="crud-modal"
         data-modal-toggle="crud-modal"
-        className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 product"
+        className={
+          edit
+            ? ""
+            : "block text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 product crud-btn"
+        }
         type="button"
       >
-        Create a new Product
+        {/* Create a new Product */}
+        {edit ? <Edit /> : "Create A new Product"}
       </button>
 
       {/* <!-- Main modal --> */}
@@ -41,7 +72,7 @@ export default function Crud() {
           id="crud-modal"
           tabIndex="-1"
           aria-hidden="true"
-          className=" overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+          className=" overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full crud-inn"
         >
           <div className="relative p-4 w-full max-w-md max-h-full">
             {/* <!-- Modal content --> */}
@@ -49,7 +80,7 @@ export default function Crud() {
               {/* <!-- Modal header --> */}
               <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  Create New Product
+                  {edit ? "Edit A Product" : "Create A New Product"}
                 </h3>
                 <button
                   onClick={(e) => setModal(!modal)}
@@ -119,13 +150,29 @@ export default function Crud() {
                       for="price"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Price
+                      Rating
                     </label>
                     <input
-                      // value={image}
-
+                      value={rating}
+                      onChange={(e) => setRating(e.target.value)}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     />
+                  </div>
+                  <div class="col-span-2">
+                    <label
+                      for="description"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Product Description
+                    </label>
+                    <textarea
+                      id="description"
+                      value={desc}
+                      onChange={(e) => setDesc(e.target.value)}
+                      rows="4"
+                      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Write product description here"
+                    ></textarea>
                   </div>
                   <div className="col-span-2">
                     <label
@@ -161,7 +208,7 @@ export default function Crud() {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                  Add new product
+                  {edit ? "Update" : "Add Product"}
                 </button>
               </form>
             </div>

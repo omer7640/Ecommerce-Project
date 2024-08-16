@@ -6,7 +6,8 @@
   background-image: url(./assets/chair1.webp);
   width: 100%;
   height: 567px;
-  background-size: contain;
+  /* background-size: contain; */
+  background-size: cover;
 }
 .heading-home {
   position: absolute;
@@ -150,4 +151,52 @@ SHOP SECTION
 }
 .product {
   margin-bottom: 34px;
+}
+
+/* MEDIA QUERY */
+@media screen and (max-width: 900px) {
+  .feature-card {
+    flex-direction: column;
+  }
+  .featured-section {
+    height: 1800px !important;
+  }
+}
+@media screen and (max-width: 700px) {
+  .heading-home {
+    right: 165px;
+  }
+  .content-card {
+    right: 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .main-cards {
+    flex-direction: column;
+  }
+  .cont-left {
+    width: 76%;
+    margin-bottom: 30px;
+  }
+  .cont-right {
+    width: 76%;
+  }
+  .hero-main-section {
+    height: 1000px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .heading-home {
+    right: 80px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .heading-home {
+    right: 20px;
+  }
+}
+@media screen and (max-width: 473px) {
+  .heading-home {
+    right: -30px;
+  }
 }

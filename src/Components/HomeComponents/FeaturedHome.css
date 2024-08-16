@@ -1,6 +1,7 @@
 .featured-section {
   background-color: #f6f6f6;
-  height: 400px;
+  height: 550px;
+  /* margin-bottom: 60px; */
 }
 
 .feature-heading {
@@ -33,4 +34,83 @@
   margin: auto;
   margin: 0 10px;
   margin-top: 10px;
+}
+
+/* discount section */
+.discount-section {
+  margin-top: 50px;
+}
+.discount-start {
+  background-image: url(/src/assets/discount.webp);
+  width: 80%;
+  height: 500px;
+  margin: auto;
+}
+.sale {
+  background: #c87065 none repeat scroll 0 0;
+  border-radius: 50%;
+  float: left;
+  height: 112px;
+  margin: 5% 15% 0 25%;
+  padding-top: 30px;
+  text-align: center;
+  width: 112px;
+}
+.sale span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  line-height: 14px;
+}
+.onsale-text {
+  font-style: italic;
+  padding-bottom: 12px;
+  position: relative;
+}
+.onsale-price {
+  padding-top: 10px;
+  font-weight: 700;
+}
+.discount-info {
+  float: left;
+  margin-top: 45px;
+  padding: 0;
+  width: 40%;
+}
+.dis-head {
+  font-size: 45px;
+  font-weight: 900;
+  line-height: 35px;
+  margin-bottom: 15px;
+  color: #c87065;
+}
+.dis-btn {
+  background: #c87065 none repeat scroll 0 0;
+  color: #fff;
+  font-weight: 700;
+  padding: 0 30px;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  padding: 0 15px;
+  position: relative;
+  font-size: 16px;
+}
+.go-some {
+  background-color: #c8a165;
+  color: white;
+}
+.go-some:hover {
+  background-color: #ad8b59;
+}
+@media screen and (max-width: 670px) {
+  .discount-info {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .discount-info {
+    width: 90%;
+  }
 }

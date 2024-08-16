@@ -1,28 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 // import { CounterContext } from "../../Context/Context";
-
+import { Link } from "react-router-dom";
+import "./Shop.css";
 import { useContext } from "react";
-import { CounterContext } from "../../Context/Context";
+import { ProductContext } from "../../Context/ProductContext";
 export default function ShopCard({ projectItem }) {
-  const value = useContext(CounterContext);
+  const value = useContext(ProductContext);
+  const [added, setAdded] = useState(false);
 
   // console.log(projectItem);
   return (
     <div>
       <div class="card-mine w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
+        <Link to={`/product/${projectItem.id}`}>
           <img
             class="p-8 rounded-t-lg"
             src={projectItem.imgUrl}
             alt="product image"
           />
-        </a>
+        </Link>
         <div class="px-5 pb-5">
-          <a href="#">
+          <Link to={`/product/${projectItem.id}`}>
             <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
               {projectItem.title}
             </h5>
-          </a>
+          </Link>
           <div class="flex items-center mt-2.5 mb-5">
             <div class="flex items-center space-x-1 rtl:space-x-reverse">
               <svg
@@ -72,19 +74,22 @@ export default function ShopCard({ projectItem }) {
               </svg>
             </div>
             <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
-              5.0
+              {projectItem.rating ? projectItem.rating : "5.0"}
             </span>
           </div>
           <div class="flex items-center justify-between">
             <span class="text-3xl font-bold text-gray-900 dark:text-white">
               ${projectItem.price}
             </span>
-            <a
-              href="#"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            <button
+              onClick={() => {
+                value.handleAddToCart(projectItem), setAdded(!added);
+              }}
+              class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 add-to-cart"
             >
-              Add to cart
-            </a>
+              {/* Add to cart */}
+              {added === true ? "added" : " Add to cart"}
+            </button>
           </div>
         </div>
       </div>

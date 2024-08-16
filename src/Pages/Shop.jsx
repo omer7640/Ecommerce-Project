@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
-import { CounterContext } from "../Context/Context";
+import { ProductContext } from "../Context/ProductContext";
 import ShopCard from "../../src/Components/ShopComponents/ShopCard";
 // import AdminMode from "../Components/ShopComponents/AdminMode";
 import AdminMode from "../Components/ShopComponents/AdminMode";
 
 export default function Shop() {
-  const value = useContext(CounterContext);
+  // const value = useContext(CounterContext);
+  // const { data } = useContext(CounterContext);
+  const { data } = useContext(ProductContext);
+
   // console.log(value);
   return (
     <div>
@@ -16,12 +19,13 @@ export default function Shop() {
           <AdminMode />
 
           <p className="shop-para">
-            Browse our selection of high-quality electronics with free worldwide
+            Browse our selection of high-quality{" "}
+            <span className="furniture"> Furnitures</span> with free worldwide
             shipping.
           </p>
         </div>
         <div className="shop-card">
-          {value.data.map((projectItem) => (
+          {data.map((projectItem) => (
             <ShopCard projectItem={projectItem} />
           ))}
         </div>

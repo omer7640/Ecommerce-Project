@@ -1,0 +1,39 @@
+.admin-icon {
+  font-size: 32px !important;
+}
+
+.edit-icon {
+  color: blue;
+}
+.delete-icon {
+  color: red;
+}
+.admin-mode {
+  background-color: #c8a165;
+}
+.admin-mode:hover {
+  background-color: #ad8b59;
+}
+.add-to-cart {
+  background-color: #c8a165;
+}
+.add-to-cart:hover {
+  background-color: #ad8b59;
+}
+.crud-inn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(49, 49, 49, 0.8);
+  height: 100%;
+}
+.crud-btn {
+  background-color: #c8a165;
+}
+.crud-btn:hover {
+  background-color: #ad8b59;
+}
+.furniture {
+  color: #c8a165;
+  font-weight: 600;
+}
