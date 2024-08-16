@@ -16,9 +16,9 @@
       "id": "6"
     },
     {
-      "title": "Kav CupBoard",
+      "title": "Wall Mirror",
       "price": 280,
-      "imgUrl": "https://interwood.pk/cdn/shop/files/Kav_Wardrobe_1_copy_345x_crop_center.jpg?v=1722575087",
+      "imgUrl": "https://interwood.pk/cdn/shop/files/SiennaMirror_cf278649-29f6-4d1c-a0bb-5281dd344e4a_596x_crop_center.jpg?v=1709640790",
       "rating": "4.4",
       "desc": "   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero porro dolores maxime labore adipisci reiciendis quod ullam ab dignissimos, quas odio. Asperiores sapiente dicta non soluta deleniti rem itaque consequatur.",
       "id": "7"
@@ -26,8 +26,8 @@
     {
       "title": "Side Table",
       "price": "160",
-      "imgUrl": "https://interwood.pk/cdn/shop/collections/Home-Decore_640x640_crop_center.jpg?v=1688374442",
-      "rating": "",
+      "imgUrl": "https://interwood.pk/cdn/shop/files/Trysil4PersonsDining-1_596x_crop_center.jpg?v=1716457082",
+      "rating": "4.9",
       "desc": "",
       "id": "f081"
     },
@@ -38,6 +38,14 @@
       "rating": "4.2",
       "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero porro dolores maxime labore adipisci reiciendis quod ullam ab dignissimos, quas odio. Asperiores sapiente dicta non soluta deleniti rem itaque consequatur",
       "id": "99"
+    },
+    {
+      "id": "e9c9",
+      "title": "chair2",
+      "price": "150",
+      "imgUrl": "blob:http://localhost:3000/df8fb6f9-c803-4c20-aab9-c2e2b113c120",
+      "rating": "3.6",
+      "desc": "wduhqwiue"
     }
   ]
 }
